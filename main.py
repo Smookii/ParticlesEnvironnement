@@ -16,7 +16,7 @@ class MouseString():
 
 
 
-class MainGame(object):
+class Main(object):
     def __init__(self):
         self.screen = pygame.display.set_mode((xmax,ymax))
 
@@ -73,4 +73,4 @@ class MainGame(object):
         pygame.display.update()
 
 if __name__ == "__main__":
-    MainGame()
+    Main()

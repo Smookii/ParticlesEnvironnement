@@ -10,8 +10,21 @@ class Particle():
         self.out = False
 
     def update(self,delta, xmax, ymax):
-        if self.pos[1] < 0 or self.pos[1] > ymax or self.pos[0] < 0 or self.pos[0] > xmax:
-            self.out = True
+        #if self.pos[1] < 0 or self.pos[1] > ymax or self.pos[0] < 0 or self.pos[0] > xmax:
+        #    self.out = True
+
+        if self.pos[1] < 0 :
+            self.pos[1] = 0
+            self.speed[1] =- self.speed[1]/2
+        if self.pos[1] > ymax:
+            self.pos[1] = ymax
+            self.speed[1] =- self.speed[1]/2
+        if self.pos[0] < 0:
+            self.pos[0] = 0
+            self.speed[0] =- self.speed[0]/2        
+        if self.pos[0] > xmax:
+            self.pos[0] = xmax
+            self.speed[0] =- self.speed[0]/2
 
 
         ratio_color = (self.pos[1] / ymax) * 255
