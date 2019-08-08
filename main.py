@@ -25,7 +25,7 @@ class Main(object):
         self.left_mouse_pressed = False
         self.mouse_pos = None
 
-        self.particle_number = 50
+        self.particle_number = 500
         self.particle_manager = ParticleManager(self.particle_number)
 
         self.delta = None
