@@ -2,11 +2,11 @@ import random
 
 
 class Particle():
-    def __init__(self, startpos, initspeed, gravity, scatter, col):
+    def __init__(self, startpos, initspeed, gravity, scatterx, scattery, col):
         self.pos = [startpos[0],startpos[1]]
-        self.speed = [initspeed[0]*2 + random.uniform(scatter[0],scatter[1]),initspeed[1]*2 + random.uniform(scatter[0],scatter[1])]
+        self.speed = [initspeed[0]*2 + random.uniform(scatterx[0],scatterx[1]),initspeed[1]*2 + random.uniform(scattery[0],scattery[1])]
         self.gravity = gravity
-        self.col = [0,0,255]
+        self.col = col
         self.out = False
 
     def update(self,delta, xmax, ymax):
@@ -20,7 +20,7 @@ class Particle():
         if ratio_color > 255:
             ratio_color = 255
         self.col[0] = ratio_color
-        self.col[2] = 255-ratio_color
+        self.col[1] = 255-ratio_color
 
 
         self.pos[0] += self.speed[0]*delta
